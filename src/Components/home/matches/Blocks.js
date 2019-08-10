@@ -14,7 +14,7 @@ export default class Blocks extends Component {
       .limitToLast(6)
       .once("value")
       .then(snapshot => {
-        const matches = firebaseLooper(snapshot);
+        let matches = firebaseLooper(snapshot);
 
         this.setState({
           matches: reverseArray(matches)
