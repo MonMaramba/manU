@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import FormField from "../../ui/formFields";
+import { validate } from "../../ui/misc";
 
 export default class Enroll extends Component {
   state = {
@@ -31,14 +32,33 @@ export default class Enroll extends Component {
 
     newElement.value = element.event.target.value;
 
+    let validata = validate(newElement);
+    newElement.valid = validata[0];
+    newElement.validationMessage = validata[1];
+
     newFormdata[element.id] = newElement;
 
     this.setState({
+      formError: false,
       formdata: newFormdata
     });
   }
 
-  submitForm() {}
+  submitForm(event) {
+    event.preventDefault();
+
+    let dataToSubmit = {};
+    let formIsValid = true;
+
+    for (let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid = this.state.formdata[key].valid && formIsValid;
+    }
+    if (formIsValid) {
+    } else {
+      this.setState({ formError: true });
+    }
+  }
 
   render() {
     return (
@@ -52,6 +72,12 @@ export default class Enroll extends Component {
                 formdata={this.state.formdata.email}
                 change={element => this.updateForm(element)}
               />
+              {this.state.formError ? (
+                <div className="error_label">
+                  enter a valid email address please
+                </div>
+              ) : null}
+              <button onClick={event => this.submitForm(event)}>Enroll</button>
             </div>
           </form>
         </div>
