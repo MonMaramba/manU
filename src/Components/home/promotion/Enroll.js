@@ -8,10 +8,13 @@ export default class Enroll extends Component {
     formError: false,
     formSuccess: "",
     formdata: {
+      // will have all inputs needed
       email: {
-        element: "input",
+        // input type as key/value pairs
+        element: "input", //kind of html element
         value: "",
         config: {
+          //
           name: "email_input",
           type: "email",
           placeholder: "enter your email"
@@ -39,7 +42,7 @@ export default class Enroll extends Component {
     newFormdata[element.id] = newElement;
 
     this.setState({
-      formError: false,
+      formError: false, // resets formError at start of typing
       formdata: newFormdata
     });
   }
