@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormField from "../ui/formFields";
 import { validate } from "../ui/misc";
+import { firebase } from "../../firebase";
 
 export default class SignIn extends Component {
   state = {
@@ -44,9 +45,50 @@ export default class SignIn extends Component {
     }
   };
 
-  updateForm() {}
+  updateForm(element) {
+    const newFormdata = { ...this.state.formdata };
+    const newElement = { ...newFormdata[element.id] };
 
-  submitForm() {}
+    newElement.value = element.event.target.value;
+
+    let validata = validate(newElement);
+    newElement.valid = validata[0];
+    newElement.validationMessage = validata[1];
+
+    newFormdata[element.id] = newElement;
+
+    this.setState({
+      formError: false, // resets formError at start of typing
+      formdata: newFormdata
+    });
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+
+    let dataToSubmit = {};
+    let formIsValid = true;
+
+    for (let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid = this.state.formdata[key].valid && formIsValid;
+    }
+    if (formIsValid) {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(dataToSubmit.email, dataToSubmit.password)
+        .then(() => {
+          this.props.history.push("/dashboard");
+        })
+        .catch(error => {
+          this.setState({
+            formError: true
+          });
+        });
+    } else {
+      this.setState({ formError: true });
+    }
+  }
 
   render() {
     return (
@@ -64,6 +106,12 @@ export default class SignIn extends Component {
               formdata={this.state.formdata.password}
               change={element => this.updateForm(element)}
             />
+            {this.state.formError ? (
+              <div className="error_label">
+                There's something wrong bro, try again
+              </div>
+            ) : null}
+            <button onClick={event => this.submitForm(event)}>Log In</button>
           </form>
         </div>
       </div>

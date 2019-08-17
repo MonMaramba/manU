@@ -1,10 +1,12 @@
 import firebase from "firebase/app";
 import "firebase/app";
 import "firebase/database";
+import "firebase/auth";
+
 require("dotenv").config();
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyC_W7z6nci2MZZr0THpEa-uTbKK0Otzxnw",
   authDomain: "man-u-c9fc2.firebaseapp.com",
   databaseURL: "https://man-u-c9fc2.firebaseio.com",
   projectId: "man-u-c9fc2",
