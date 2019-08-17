@@ -6,7 +6,8 @@ import "firebase/auth";
 require("dotenv").config();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC_W7z6nci2MZZr0THpEa-uTbKK0Otzxnw",
+  //process.env.API_KEY not working
+  apiKey: process.env.API_KEY,
   authDomain: "man-u-c9fc2.firebaseapp.com",
   databaseURL: "https://man-u-c9fc2.firebaseio.com",
   projectId: "man-u-c9fc2",
