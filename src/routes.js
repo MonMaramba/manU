@@ -5,6 +5,7 @@ import SignIn from "./Components/signin";
 import Home from "./Components/home";
 import Dashboard from "./Components/admin/Dashboard";
 import PrivateRoute from "./Components/authRoutes/privateRoutes";
+import PublicRoute from "./Components/authRoutes/publicRoutes";
 
 function Routes(props) {
   return (
@@ -17,8 +18,20 @@ function Routes(props) {
           component={Dashboard}
         />
 
-        <Route exact component={SignIn} path="/sign_in" />
-        <Route exact component={Home} path="/" />
+        <PublicRoute
+          {...props}
+          path="/sign_in"
+          restricted={true}
+          exact
+          component={SignIn}
+        />
+        <PublicRoute
+          {...props}
+          path="/"
+          restricted={false}
+          exact
+          component={Home}
+        />
       </Switch>
     </Layout>
   );
