@@ -6,6 +6,7 @@ import Home from "./Components/home";
 import Dashboard from "./Components/admin/Dashboard";
 import PrivateRoute from "./Components/authRoutes/privateRoutes";
 import PublicRoute from "./Components/authRoutes/publicRoutes";
+import AdminMatches from "./Components/admin/matches";
 
 function Routes(props) {
   return (
@@ -16,6 +17,13 @@ function Routes(props) {
           path="/dashboard"
           exact
           component={Dashboard}
+        />
+
+        <PrivateRoute
+          {...props}
+          path="/admin_matches"
+          exact
+          component={AdminMatches}
         />
 
         <PublicRoute
