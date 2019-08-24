@@ -7,7 +7,7 @@ import Dashboard from "./Components/admin/Dashboard";
 import PrivateRoute from "./Components/authRoutes/privateRoutes";
 import PublicRoute from "./Components/authRoutes/publicRoutes";
 import AdminMatches from "./Components/admin/matches";
-
+import AddEditMatch from "./Components/admin/matches/addEditMatch";
 function Routes(props) {
   return (
     <Layout>
@@ -19,6 +19,12 @@ function Routes(props) {
           component={Dashboard}
         />
 
+        <PrivateRoute
+          {...props}
+          path="/admin_matches/edit_match/:id"
+          exact
+          component={AddEditMatch}
+        />
         <PrivateRoute
           {...props}
           path="/admin_matches"
