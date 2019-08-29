@@ -5,7 +5,6 @@ import FormField from "../../ui/formFields";
 import { validate } from "../../ui/misc";
 import { firebaseMatches, firebaseDB, firebaseTeams } from "../../../firebase";
 import { firebaseLooper } from "../../ui/misc";
-import { getDefaultWatermarks } from "istanbul-lib-report";
 
 export default class AddEditMatch extends Component {
   state = {
