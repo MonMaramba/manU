@@ -167,9 +167,9 @@ export default class AddEditMatch extends Component {
 
     newElement.value = element.event.target.value;
 
-    let validata = validate(newElement);
-    newElement.valid = validata[0];
-    newElement.validationMessage = validata[1];
+    let validData = validate(newElement);
+    newElement.valid = validData[0];
+    newElement.validationMessage = validData[1];
 
     newFormdata[element.id] = newElement;
 
