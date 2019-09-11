@@ -11,6 +11,7 @@ import AdminMatches from "./Components/admin/matches";
 import AddEditMatch from "./Components/admin/matches/addEditMatch";
 import AdminPlayers from "./Components/admin/players";
 import AddEditPlayers from "./Components/admin/players/addEditPlayers";
+import TheMatches from "./Components/theMatches";
 function Routes(props) {
   return (
     <Layout>
@@ -81,6 +82,13 @@ function Routes(props) {
           restricted={false}
           exact
           component={TheTeam}
+        />
+        <PublicRoute
+          {...props}
+          path="/the_matches"
+          restricted={false}
+          exact
+          component={TheMatches}
         />
       </Switch>
     </Layout>
