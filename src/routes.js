@@ -15,6 +15,7 @@ import TheMatches from "./Components/theMatches";
 function Routes(props) {
   return (
     <Layout>
+      // header and footer gets passed with Layout
       <Switch>
         <PrivateRoute
           {...props}
