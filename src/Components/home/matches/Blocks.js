@@ -10,6 +10,7 @@ export default class Blocks extends Component {
   };
 
   componentDidMount() {
+    // .limitToLast is a firebase method
     firebaseMatches
       .limitToLast(6)
       .once("value")

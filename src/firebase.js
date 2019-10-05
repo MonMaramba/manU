@@ -6,6 +6,7 @@ import "firebase/storage";
 
 require("dotenv").config();
 
+// passwords and locations
 const firebaseConfig = {
   //process.env.API_KEY not working
   apiKey: process.env.API_KEY,
@@ -17,8 +18,10 @@ const firebaseConfig = {
   appId: "1:313246602462:web:05c1598212716d54"
 };
 
+// starts application/connection to firebase
 firebase.initializeApp(firebaseConfig);
 
+// network requests
 const firebaseDB = firebase.database();
 const firebaseMatches = firebaseDB.ref("matches");
 const firebasePromotions = firebaseDB.ref("promotions");
