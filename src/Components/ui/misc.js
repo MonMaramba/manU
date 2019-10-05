@@ -17,7 +17,7 @@ export const Tag = props => {
       {props.children}
     </div>
   );
-
+  // if there is a link. linkto refers to component
   if (props.link) {
     return <Link to={props.linkto}>{template}</Link>;
   } else {

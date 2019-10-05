@@ -53,6 +53,8 @@ export default class Stripes extends Component {
           }
         }}
       >
+        // function that returns the stripes. State passed as args per docs of
+        react-move
         {({ opacity, left, rotate, top, background }) => {
           return (
             <div
