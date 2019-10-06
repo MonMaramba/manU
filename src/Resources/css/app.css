@@ -164,7 +164,7 @@ footer .footer_discl {
 .featured_wrapper {
   margin: 0 auto;
   width: 1280px;
-  margin-top: 90px;
+  margin-top: 77px;
   height: 800px;
   overflow: hidden;
 }
@@ -305,7 +305,7 @@ footer .footer_discl {
 .match_box_big .block_wraper {
   display: inline-block;
   margin-right: 50px;
-  float: left;
+  /* float: left; */
 }
 
 .match_box_big .block {

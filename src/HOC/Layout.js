@@ -8,7 +8,7 @@ const Layout = props => {
   return (
     <div>
       <Header />
-      {props.children} // anything that gets passed in routes.js
+      {props.children}
       <Footer />
     </div>
   );
