@@ -78,7 +78,7 @@ export default class SignIn extends Component {
         .auth()
         .signInWithEmailAndPassword(dataToSubmit.email, dataToSubmit.password)
         .then(() => {
-          this.props.history.push("/dashboard");
+          this.props.history.push("/dashboard"); // to send user to new route 'dashboard' if authenticated
         })
         .catch(error => {
           this.setState({
