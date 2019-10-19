@@ -116,7 +116,7 @@ export default class Enroll extends Component {
               />
               {this.state.formError ? (
                 <div className="error_label">
-                  enter a valid email address please
+                  Enter a valid email address please
                 </div>
               ) : null}
               <div className="success_label">{this.state.formSuccess}</div>
