@@ -66,14 +66,14 @@ function Routes(props) {
         <PublicRoute
           {...props}
           path="/sign_in"
-          restricted={true}
+          restricted={true} //disallows access if logged in
           exact
           component={SignIn}
         />
         <PublicRoute
           {...props}
           path="/"
-          restricted={false}
+          restricted={false} //free access whether logged in or not
           exact
           component={Home}
         />
