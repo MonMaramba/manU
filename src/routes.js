@@ -36,7 +36,7 @@ function Routes(props) {
           component={AdminPlayers}
         />
 
-        <PrivateRoute
+        <PrivateRoute //prop taken from index.js using onAuthChanged()
           {...props}
           path="/dashboard"
           exact

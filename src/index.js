@@ -13,7 +13,7 @@ const App = props => {
     </BrowserRouter>
   );
 };
-
+//onAuthStateChanged() method gives user to be used as a prop and sent to
 firebase.auth().onAuthStateChanged(user => {
   ReactDOM.render(<App user={user} />, document.getElementById("root"));
 });
