@@ -18,7 +18,7 @@ export default class Enroll extends Component {
           //
           name: "email_input",
           type: "email",
-          placeholder: "enter your email"
+          placeholder: "Enter your email"
         },
         validation: {
           required: true,
@@ -96,7 +96,6 @@ export default class Enroll extends Component {
             this.resetFormSuccess(false);
           }
         });
-      //this.resetFormSuccess();
     } else {
       this.setState({ formError: true });
     }
