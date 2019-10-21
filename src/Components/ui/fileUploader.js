@@ -37,8 +37,10 @@ export default class Fileuploader extends Component {
   };
 
   static getDerivedStateFromProps(props, state) {
+    //rerenders everything when state changes
     if (props.defaultImg) {
       return (state = {
+        //changes state with new state
         name: props.defaultImgName,
         fileURL: props.defaultImg
       });
