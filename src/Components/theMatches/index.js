@@ -10,7 +10,7 @@ export default class TheMatches extends Component {
     loading: true,
     matches: [],
     filterMatches: [],
-    playerFilter: "All",
+    playedFilter: "All",
     resultFilter: "All"
   };
 
@@ -31,7 +31,7 @@ export default class TheMatches extends Component {
     });
     this.setState({
       filterMatches: played === "All" ? this.state.matches : list,
-      playerFilter: played,
+      playedFilter: played,
       resultFilter: "All"
     });
   };
