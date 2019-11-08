@@ -6,6 +6,7 @@ import Home from "./Components/home";
 import Dashboard from "./Components/admin/Dashboard";
 import PrivateRoute from "./Components/authRoutes/privateRoutes";
 import PublicRoute from "./Components/authRoutes/publicRoutes";
+import NotFound from "./Components/ui/not_found";
 import TheTeam from "./Components/theTeam/";
 import AdminMatches from "./Components/admin/matches";
 import AddEditMatch from "./Components/admin/matches/addEditMatch";
@@ -91,6 +92,7 @@ function Routes(props) {
           exact
           component={TheMatches}
         />
+        <PublicRoute {...props} restricted={false} exact component={NotFound} />
       </Switch>
     </Layout>
   );
